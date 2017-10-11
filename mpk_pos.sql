@@ -11,3 +11,9 @@ veh_lat numeric,
 veh_lon numeric,
 minsnapshottime timestamp
 ) order by minsnapshottime;
+
+create table stops (
+stopno varchar(20),
+lat numeric,
+long numeric
+) order by stopno;
