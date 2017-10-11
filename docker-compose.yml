@@ -1,0 +1,17 @@
+version: '2'
+services:
+  rstudio:
+    build: 
+      context: .
+      dockerfile: Dockerfile-rstudio
+    ports:
+       - "8787:8787"
+       - "3838:3838"
+    volumes:
+       - "$PWD/mpk_app:/home/rstudio/shiny"
+  vertica:
+    build: 
+      context: .
+      dockerfile: Dockerfile-vertica
+    ports:
+       - "5433:5433"
