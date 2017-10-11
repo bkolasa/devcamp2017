@@ -9,9 +9,13 @@ services:
        - "3838:3838"
     volumes:
        - "$PWD/mpk_app:/home/rstudio/shiny"
+    image: devcamp/rstudio
   vertica:
     build: 
       context: .
       dockerfile: Dockerfile-vertica
     ports:
        - "5433:5433"
+    volumes:
+       - "$PWD/vertica_data:/home/dbadmin/docker"
+    image: devcamp/vertica
