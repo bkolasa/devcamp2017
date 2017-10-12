@@ -14,6 +14,7 @@ minsnapshottime timestamp
 
 create table stops (
 stopno varchar(20),
+name varchar(200),
 lat numeric,
 long numeric
 ) order by stopno;

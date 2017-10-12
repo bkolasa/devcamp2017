@@ -1,0 +1,47 @@
+---
+title: "Interaktywne wizualizacje na dużych zbiorach danych"
+author: "Bartosz Kolasa"
+date: "14 października 2017"
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    self_contained: false
+    transition: fade
+    reveal_plugins: ["notes"]
+    reveal_options:
+      slideNumber: true
+      previewLinks: true
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+Note:
+Some note
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+

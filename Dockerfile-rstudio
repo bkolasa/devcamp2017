@@ -13,7 +13,8 @@ RUN install2.r --error shinycssloaders shinythemes
 RUN sed -i '/site_dir/c\app_dir /srv/shiny-server/devcamp;' /etc/shiny-server/shiny-server.conf
 RUN mkdir /srv/shiny-server/devcamp && chmod 777 /srv/shiny-server/devcamp && ln -s /srv/shiny-server/devcamp /home/rstudio/shiny
 RUN service shiny-server reload
-RUN install2.r --error microbenchmark
+RUN apt-get update && apt-get install -y libpng-dev
+RUN install2.r --error microbenchmark leaflet
 
 ADD ./vertica-client*.tar.gz /
 ADD ./odbc*.ini /etc/
