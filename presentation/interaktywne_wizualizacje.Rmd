@@ -4,6 +4,7 @@ author: "Bartosz Kolasa"
 date: "14 października 2017"
 output:
   revealjs::revealjs_presentation:
+    fig_caption: yes
     theme: black
     self_contained: false
     transition: fade
@@ -35,19 +36,111 @@ knitr::opts_chunk$set(echo = FALSE)
 <https://github.com/bkolasa/devcamp2017>
 
 
+## Filary Data Science
+![Filary Data Science](venn.png){width=50% height=50%}
 
-## R markdown
+Źródło: <https://www.kdnuggets.com/2017/03/data-science-data-scientist-do.html>
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Oczekiwania klientów
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+- self service
+- łatwość obsługi
+- dobry design
+- wydajność
 
-Note:
-Some note
+## Wyzwania
+- wydajność obliczeń
+- dobry UX
+- szybkośc implementacji
 
-## Slide with Bullets
+## Technologie
+<div class = "row">
+<div class = "col-sm-2">
+<img src="Vertica-logo.jpg"/ width="20%" height="20%">
+</div>
+<div class = "col-sm-2">
+<img src="RShiny-logo.png"/ width="20%" height="20%">
+</div>
+<div class = "col-sm-2">
+<img src="Rlogo.png"/ width="20%" height="20%">
+</div>
+</div>
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+## Dlaczego R?
 
+![R growth](r-growth.png)
+
+Żródło: <https://stackoverflow.blog/2017/10/10/impressive-growth-r/>
+
+## Dlaczego Vertica?
+<div class = "row">
+<div class = "col-md-3">
+<img src="Vertica-logo.jpg"/ width="30%" height="30%">
+</div>
+<div class = "col-md-3">
+- horyzontalnie skalowana baza w architekturze multi-master
+- wbudowana kompresja 
+- dedykowana do rozwiązań analitycznych
+- hybrydowy kolumnowy model składowania
+</div>
+</div>
+## Dlaczego Vertica?
+![](ros-wos.png)
+
+WOS = RAM <br> ROS = DISK STORAGE
+
+## Dlaczego Vertica?
+
+Wersja community:
+
+- do 1 TB danych wejściowych
+- do 3 nodów
+
+Dostępna po zarejestrowaniu na <https://my.vertica.com>
+
+## R crashcourse
+Operator przypisania
+```{r echo=TRUE, fig.cap="Operator przypisania"}
+zmienna <- "wartosc"
+"wartosc" -> zmienna
+```
+Deklaracja funkcji
+```{r echo=TRUE, fig.cap="Operator przypisania"}
+foo <- function(a,b){
+  a+b
+}
+```
+Ładowanie biblioteki
+```{r echo=TRUE, eval=FALSE}
+library(dplyr)
+```
+
+## R crashcourse
+Ramki danych
+```{r echo=TRUE}
+read.csv("../stops.csv") -> stops
+head(stops) -> df
+df
+```
+
+## R crashcourse
+
+Operator %>%
+```{r eval=FALSE, echo=TRUE}
+mpk_pos %>% head
+mpk_pos %>% head()
+head(mpk_pos)
+
+mpk_pos %>% filter(lineno=="2") %>% head %>% print
+print(head(filter(mpk_pos, lineno=="2")))
+```
+
+## Shiny
+Biblioteka R do tworzenia interaktywnych wizualizacji
+![](shiny-arch.png){width=60% heigth=60%}
+
+## Dane do analizy
+
+- pozycje autobusów wrocławskiego MPK z okresu 1.11.2016 do 28.02.2017
+- łącznie 88 mln rekordów w tabeli `mpk_pos`
+- słownik przystanków autobusowych w tabeli `stops`
