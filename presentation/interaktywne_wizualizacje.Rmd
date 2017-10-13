@@ -18,6 +18,24 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+
+## O mnie
+<div class = "row">
+<div class = "col-md-3">
+<img src="ja.jpg"/ width="30%" height="30%">
+</div>
+<div class = "col-md-3">
+- backend developer: Java, SQL
+- Data Scientist: R, SQL
+</div>
+</div>
+
+
+## Kod do pobrania
+<https://github.com/bkolasa/devcamp2017>
+
+
+
 ## R markdown
 
 This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
@@ -32,16 +50,4 @@ Some note
 - Bullet 1
 - Bullet 2
 - Bullet 3
-
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
-```
-
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
-```
 
