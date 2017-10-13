@@ -18,7 +18,7 @@ $PATH_TO_VSQL -p 5433 -U dbadmin < populate_db.sql
 
 # Całe dane
 W repozytorium znajduje się tylko próbka danych z pozycjami autobusów z jednego niepełnego dnia (1.11.2016 r.).
-Pełny zbiór danych znajduje się [tutaj](tu będzie link) (ok. 900 MB skompresowanych danych).
+Pełny zbiór danych znajduje się [tutaj](https://drive.google.com/open?id=0B6lknm3hDQaNSXZHaDd1TTIwT3c) (ok. 900 MB skompresowanych danych).
 Należy go następnie rozpakować i przenieść do katalogu z repozytorium. Finalnie plik waży ok. 8 GB.
 
 # Wymaganie sprzętowe
