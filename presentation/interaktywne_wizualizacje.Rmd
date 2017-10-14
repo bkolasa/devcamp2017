@@ -37,7 +37,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ## Filary Data Science
-![Filary Data Science](venn.png){width=50% height=50%}
+![Filary Data Science](venn.png){width=40% height=40%}
 
 Źródło: <https://www.kdnuggets.com/2017/03/data-science-data-scientist-do.html>
 
@@ -62,15 +62,15 @@ knitr::opts_chunk$set(echo = FALSE)
 <img src="RShiny-logo.png"/ width="20%" height="20%">
 </div>
 <div class = "col-sm-2">
-<img src="Rlogo.png"/ width="20%" height="20%">
+<img src="Rlogo.png"/ width="15%" height="15%">
 </div>
 </div>
 
 ## Dlaczego R?
 
-![R growth](r-growth.png)
+![](r-growth.png){height=65% width=65%}
 
-Żródło: <https://stackoverflow.blog/2017/10/10/impressive-growth-r/>
+<small>Żródło: <https://stackoverflow.blog/2017/10/10/impressive-growth-r/></small>
 
 ## Dlaczego Vertica?
 <div class = "row">

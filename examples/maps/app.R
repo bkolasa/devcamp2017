@@ -1,7 +1,6 @@
 library(shiny)
 library(leaflet)
 library(ggplot2)
-library(memoise)
 library(vertica.dplyr)
 source("global.R", local = FALSE)
 
@@ -9,11 +8,8 @@ source("global.R", local = FALSE)
 tbl(vertica, "mpk_pos") -> mpk_pos
 mpk_pos %>% distinct(lineno) %>% arrange(lineno) %>% collect -> lines
 getStops <- function(){
-mpk_pos %>% group_by(stopno) %>% mutate(long=median(veh_lon,order=NULL),
-                                        lat=median(veh_lat,order=NULL)) %>%
-  distinct(stopno,long,lat) %>% collect 
+tbl(vertica, "stops") %>% collect 
 }
-memoise(getStops, cache = cache_filesystem("/tmp")) -> getStops
 
 server <- function(input, output, session) {
   output$plot <- renderPlot({
@@ -28,9 +24,9 @@ server <- function(input, output, session) {
     ggplot(hist_data, aes(x=hour,y=avg)) + geom_bar(stat="identity")
   })
   output$map <- renderLeaflet({
-    getStops() %>% leaflet() %>% addTiles() %>% setView(19,52,zoom=5) %>% addCircleMarkers()
+    getStops() %>% leaflet() %>% addTiles() %>% setView(17,51,10) %>%
+      addMarkers(clusterOptions=markerClusterOptions())
   })
-  output$x <- reactive("Under map")
 }
 
 ui <- navbarPage(
@@ -46,8 +42,7 @@ ui <- navbarPage(
            )
   ),
   tabPanel("Map",
-           leafletOutput("map",height = 800, width = "100%"),
-           verbatimTextOutput("x")
+           leafletOutput("map",height = 800)
   )
 )
 
